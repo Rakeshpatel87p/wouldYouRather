@@ -1,4 +1,4 @@
-export const RECEIVE_QUESTIONS = 'RECEIVE_TWEETS'
+export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 
 export function receiveQuestions(questions) {
 	return {
