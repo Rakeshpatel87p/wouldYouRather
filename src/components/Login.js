@@ -1,19 +1,25 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends Component {
+
+	setAuthedUser = (event) => {
+		//take value from below
+		const selectedUser = event.target.value
+		//dispatch action, setting AuthedUser
+		this.props.dispatch(setAuthedUser(selectedUser))
+	}
+
 	render() {
-		console.log(this.props)
 		return (
 			<div>
 				<h1>Select From User List Below</h1>
-				<ul>
+				<select onChange={this.setAuthedUser}>
 					{this.props.users.map((user) => (
-						<li key={user}>
-							{user}
-						</li>
+						<option key={user} value={user}>{user}</option>
 					))}
-				</ul>
+          		</select>
 			</div>
 		)
 	}

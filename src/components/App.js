@@ -10,9 +10,23 @@ class App extends Component {
 	}
 	render() {
 		return (
-		  <Login />
+			<div>
+			{ this.props.authedUser === null 
+				? <Login />
+				: 	<div> 
+						<h1>User already set</h1>
+			  		</div>
+			}
+			
+			</div>
 		);
 	}
 }
 
-export default connect()(App);
+function mapStateToProps({authedUser}) {
+	return {
+		authedUser
+	}
+}
+
+export default connect(mapStateToProps)(App);
