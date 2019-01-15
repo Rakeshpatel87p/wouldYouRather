@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
+import Login from './Login'
 
 class App extends Component {
 	componentDidMount() {
@@ -10,9 +10,7 @@ class App extends Component {
 	}
 	render() {
 		return (
-		  <div className="App">
-		    <h1>Howdy Rakesh</h1>
-		  </div>
+		  <Login />
 		);
 	}
 }
