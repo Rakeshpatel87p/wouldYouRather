@@ -3,6 +3,7 @@ import '../App.css';
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Login from './Login'
+import Dashboard from './Dashboard'
 
 class App extends Component {
 	componentDidMount() {
@@ -13,9 +14,7 @@ class App extends Component {
 			<div>
 			{ this.props.authedUser === null 
 				? <Login />
-				: 	<div> 
-						<h1>User already set</h1>
-			  		</div>
+				: <Dashboard />
 			}
 			
 			</div>
