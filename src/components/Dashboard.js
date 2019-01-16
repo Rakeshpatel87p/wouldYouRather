@@ -6,6 +6,7 @@ class Dashboard extends Component {
 		return (
 			<div>
 				<h3>Your Timeline</h3>
+				
 			</div>
 		)
 	}
