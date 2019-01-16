@@ -5,15 +5,17 @@ class Dashboard extends Component {
 	render() {
 		return (
 			<div>
-				<h1>We've reached {this.props.authedUser}'s Dashboard</h1>
+				<h3>Your Timeline</h3>
 			</div>
 		)
 	}
 }
 
-function mapStateToProps({authedUser}) {
+function mapStateToProps({authedUser, users}) {
+	//return object of user	
 	return {
-		authedUser
+		authedUser,
+		user: users[authedUser]
 	}
 }
 
