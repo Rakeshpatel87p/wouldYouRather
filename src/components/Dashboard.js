@@ -4,15 +4,15 @@ import QuestionCard from './QuestionCard'
 
 class Dashboard extends Component {
 	render() {
-		const { userAnswers } = this.props 
+		const { questionsAnswered } = this.props 
 		
 		return (
 			<div>
 				<h3>Your Timeline</h3>
-				<ul>
-				{ Object.keys(userAnswers).map((keyname) => (
+				<ul class="questions-answered">
+				{ questionsAnswered.map((keyname) => (
 					<li>
-						<QuestionCard question={keyname} answer={userAnswers[keyname]}/>
+						<QuestionCard id={keyname.id} />
 					</li>
 				))}
 				</ul>
@@ -29,8 +29,10 @@ function mapStateToProps({authedUser, users, questions}) {
 	//const answeredQuestions = Object.keys(userData.answers)
 	return {
 		authedUser,
-		user: userData,
-		userAnswers: userData.answers 
+		userData,
+		questionsAnswered: Object.keys(userData.answers).map((keyname) => (
+			questions[keyname]
+		))
 	}
 }
 
