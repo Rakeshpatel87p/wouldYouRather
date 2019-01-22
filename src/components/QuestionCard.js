@@ -12,7 +12,7 @@ class QuestionCard extends Component {
 function mapStateToProps({questions, users}, {id}) {
 	return {
 		question: questions[id],
-		questionAuthorInfo: users[questions[id].author]
+		//authorInfo: users[questions[id].author]
 	}
 }
 
