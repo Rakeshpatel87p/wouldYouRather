@@ -4,7 +4,7 @@ import QuestionCard from './QuestionCard'
 
 class Dashboard extends Component {
 	render() {
-		const { answered } = this.props 
+		const { answered, unanswered } = this.props 
 		
 		return (
 			<div>
@@ -12,12 +12,16 @@ class Dashboard extends Component {
 				<ul className="answeredQuestions">
 				{ answered.map((keyname) => (
 					<li key={keyname}>
-						<QuestionCard id={keyname.id} />
+						<QuestionCard id={keyname} />
 					</li>
 				))}
 				</ul>
 				<ul className="questionsUnanswered">
-
+					{ unanswered.map((keyname) => (
+						<li key={keyname}>
+							<QuestionCard id={keyname} />
+						</li>
+					))}
 				</ul>
 
 			</div>

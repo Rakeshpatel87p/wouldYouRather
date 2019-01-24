@@ -3,16 +3,18 @@ import { connect } from 'react-redux'
 
 class QuestionCard extends Component {
 	render() {
+		const {  question } = this.props
+
 		return (
-			<p>Hey cowboy</p>
+			<p>{question.id}</p>
 		)
 	}
 }
 
-function mapStateToProps({questions, users}, {id}) {
+function mapStateToProps({questions}, {id}) {
 	return {
 		question: questions[id],
-		//authorInfo: users[questions[id].author]
+
 	}
 }
 
