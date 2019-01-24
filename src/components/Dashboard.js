@@ -11,7 +11,7 @@ class Dashboard extends Component {
 				<h3>Your Timeline</h3>
 				<ul className="answeredQuestions">
 				{ answered.map((keyname) => (
-					<li>
+					<li key={keyname}>
 						<QuestionCard id={keyname.id} />
 					</li>
 				))}
