@@ -23,7 +23,6 @@ class Dashboard extends Component {
 						</li>
 					))}
 				</ul>
-
 			</div>
 		)
 	}
