@@ -1,3 +1,5 @@
+import { _saveQuestionAnswer } from '../utils/_Data'
+
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const SAVE_ANSWER = 'SAVE_ANSWER'
 
@@ -8,10 +10,24 @@ export function receiveQuestions(questions) {
 	}
 }
 
-export function saveAnswer({qid, answer}) {
+export function saveAnswer(questionAnswer) {
 	return {
 		type: SAVE_ANSWER,
-		qid,
-		answer
+		questionAnswer
 	}
+}
+
+export function handleSaveQuestionAnswer(qid, answer) {
+	return(dispatch, getState) => {
+		
+		const { authedUser } = getState()
+		
+		return _saveQuestionAnswer({
+			authedUser, 
+			qid, 
+			answer
+		})
+			.then((savedAnswer) => dispatch(saveAnswer(savedAnswer)))
+	}
+
 }

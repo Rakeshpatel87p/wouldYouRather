@@ -4,9 +4,9 @@ import { setAuthedUser } from '../actions/authedUser'
 
 class Login extends Component {
 
-	setAuthedUser = (event) => {
+	setAuthedUser = (e) => {
 		//take value from below
-		const selectedUser = event.target.value
+		const selectedUser = e.target.value
 		//dispatch action, setting AuthedUser
 		this.props.dispatch(setAuthedUser(selectedUser))
 	}

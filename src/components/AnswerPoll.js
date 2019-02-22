@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { saveAnswer } from '../actions/questions'
+import { handleSaveQuestionAnswer } from '../actions/questions'
 
 class AnswerPoll extends Component {
 
-	submitAnswer = (e) => {
+	submitAnswer = (e, id) => {
 		e.preventDefault()
-
-		const { dispatch, question, id } = this.props
-
-		dispatch(saveAnswer(id, 'optionTwo'))
+		this.props.dispatch(handleSaveQuestionAnswer(id, 'optionTwo'))
 	}
 
 	render() {
-		const { question } = this.props
+
+		const { dispatch, authedUser, question, id } = this.props;
 
 		return (
 			<div>
@@ -26,16 +24,19 @@ class AnswerPoll extends Component {
 					<input id="optionTwo" type="radio" name="userResponse" value="optionTwo" />
 					<label for="optionTwo">{question.optionTwo.text}</label>
 				</form>
-				<button onClick={this.submitAnswer}> Submit Answer</button>
+				<button onClick={(e) => this.submitAnswer(e, id, authedUser)}>
+					Submit Answer
+				</button>
 			</div>
 		)
 	}
 }
 
-function mapStateToProps({questions}, {id}) {
+function mapStateToProps({authedUser, questions}, {id}) {
 	//const { id } = props.match.params
 
 	return {
+		authedUser: authedUser,
 		question: questions[id],
 	}
 	
