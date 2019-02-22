@@ -172,12 +172,13 @@ export function _saveQuestion (question) {
 }
 
 export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
-  const savedQuestionAnswer = {
-    authedUser,
-    users,
-    questions
-  }
   return new Promise((res, rej) => {
+    const savedQuestionAnswer = {
+      authedUser,
+      qid,
+      answer
+    }
+
     setTimeout(() => {
       users = {
         ...users,
