@@ -6,7 +6,8 @@ class AnswerPoll extends Component {
 
 	submitAnswer = (e, id) => {
 		e.preventDefault()
-		this.props.dispatch(handleSaveQuestionAnswer(id, 'optionTwo'))
+		const optionTwo = 'optionTwo'
+		this.props.dispatch(handleSaveQuestionAnswer(id, optionTwo))
 	}
 
 	render() {
@@ -24,7 +25,7 @@ class AnswerPoll extends Component {
 					<input id="optionTwo" type="radio" name="userResponse" value="optionTwo" />
 					<label for="optionTwo">{question.optionTwo.text}</label>
 				</form>
-				<button onClick={(e) => this.submitAnswer(e, id, authedUser)}>
+				<button onClick={(e) => this.submitAnswer(e, id)}>
 					Submit Answer
 				</button>
 			</div>

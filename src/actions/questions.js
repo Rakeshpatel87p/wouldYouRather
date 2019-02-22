@@ -22,7 +22,6 @@ export function handleSaveQuestionAnswer(qid, answer) {
 	return(dispatch, getState) => {
 		
 		const { authedUser } = getState()
-		
 		return saveQuestionAnswer({
 			authedUser, 
 			qid, 
