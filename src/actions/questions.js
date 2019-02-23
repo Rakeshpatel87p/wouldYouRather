@@ -10,11 +10,12 @@ export function receiveQuestions(questions) {
 	}
 }
 
-export function saveAnswer(questionAnswer) {
-	console.log(questionAnswer)
+export function saveAnswer({authedUser, qid, answer}) {
 	return {
 		type: SAVE_ANSWER,
-		questionAnswer
+		authedUser,
+		qid,
+		answer
 	}
 }
 
