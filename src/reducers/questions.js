@@ -22,8 +22,14 @@ export default function questions(state = {}, action) {
 						votes: state[qid][answer].votes.concat([authedUser])
 					}
 					
+				},
+				/* Not working for some reason
+				[authedUser] : {
+					...state[authedUser],
+					answers: {...state[authedUser].answers, qid: answer }
+
 				}
-				/*
+				
 				[authedUser] : {
 					...state[authedUser],
 					answers: {

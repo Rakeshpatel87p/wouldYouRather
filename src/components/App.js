@@ -7,6 +7,7 @@ import Login from './Login'
 import Dashboard from './Dashboard'
 import AnswerPoll from './AnswerPoll'
 import QuestionCard from './QuestionCard'
+import NewQuestionCard from './NewQuestionCard'
 
 class App extends Component {
 	componentDidMount() {
@@ -17,7 +18,7 @@ class App extends Component {
 				<div>
 				{ this.props.authedUser === null 
 					? <Login />
-					: <AnswerPoll id={'6ni6ok3ym7mf1p33lnez'}/>
+					: <NewQuestionCard />
 				}
 				
 				</div>
