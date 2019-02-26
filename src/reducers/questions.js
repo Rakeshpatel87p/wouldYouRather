@@ -1,5 +1,5 @@
 import { RECEIVE_QUESTIONS } from '../actions/questions'
-import { SAVE_ANSWER } from '../actions/questions'
+import { SAVE_ANSWER, SAVE_NEW_QUESTION } from '../actions/questions'
 
 export default function questions(state = {}, action) {
 	switch(action.type) {
@@ -23,7 +23,7 @@ export default function questions(state = {}, action) {
 					}
 					
 				},
-				/* Not working for some reason
+				/* Not working- cannot read property answers of undefined
 				[authedUser] : {
 					...state[authedUser],
 					answers: {...state[authedUser].answers, qid: answer }
@@ -37,7 +37,20 @@ export default function questions(state = {}, action) {
 					}
 				}
 				*/
-			} 
+			}
+		
+		case  SAVE_NEW_QUESTION : {
+			const { optionOneText, optionTwoText, author, id } = action
+			//Not working - cannot read property questions of undefined 
+			return {
+				...state,
+				[author] : {
+					...state[authedUser],
+					questions: state[authedUser].questions.concat([id])
+				}
+			}
+		}
+		
 			
 		default :
 			return state
