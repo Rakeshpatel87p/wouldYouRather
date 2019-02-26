@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { handleNewQuestion } from '../actions/questions'
+import { connect } from 'react-redux'
 
 class NewQuestionCard extends Component {
 	constructor(props) {
@@ -18,6 +20,10 @@ class NewQuestionCard extends Component {
   	
   	handleSubmit(event) {
     	event.preventDefault();
+    	//console.log(event)
+    	const { optionOneText, optionTwoText } = this.state
+    	const { authedUser } = this.props
+    	this.props.dispatch(handleNewQuestion(optionOneText, optionTwoText, authedUser))
   	}
 	
 	render() {
@@ -44,4 +50,10 @@ class NewQuestionCard extends Component {
 	}
 }
 
-export default NewQuestionCard
+function mapStateToProps({authedUser}) {
+	return {
+		authedUser
+	}
+}
+
+export default connect(mapStateToProps)(NewQuestionCard)

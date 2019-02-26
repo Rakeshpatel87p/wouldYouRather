@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { handleSaveQuestionAnswer } from '../actions/questions'
+import { handleSaveAnswer } from '../actions/questions'
 
 class AnswerPoll extends Component {
 
 	submitAnswer = (e, id) => {
 		e.preventDefault()
 		const optionTwo = 'optionTwo'
-		this.props.dispatch(handleSaveQuestionAnswer(id, optionTwo))
+		this.props.dispatch(handleSaveAnswer(id, optionTwo))
 	}
 
 	render() {
