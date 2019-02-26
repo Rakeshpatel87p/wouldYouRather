@@ -14,7 +14,6 @@ class NewQuestionCard extends Component {
 	
 	handleChange(event, element) {
     	this.setState({[element]: event.target.value});
-    	console.log(this.state)
   	}
   	
   	handleSubmit(event) {
