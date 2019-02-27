@@ -44,8 +44,8 @@ function mapStateToProps({authedUser, users, questions}) {
   		qid => !answered.includes(qid)
 	);
 
-	console.log("answered", answered);
-	console.log("unanswered", unanswered);
+	//console.log("answered", answered);
+	//console.log("unanswered", unanswered);
 	
 	return {
 		authedUser,

@@ -8,6 +8,7 @@ import Dashboard from './Dashboard'
 import AnswerPoll from './AnswerPoll'
 import QuestionCard from './QuestionCard'
 import NewQuestionCard from './NewQuestionCard'
+import LeaderBoard from './LeaderBoard'
 
 class App extends Component {
 	componentDidMount() {
@@ -18,7 +19,7 @@ class App extends Component {
 				<div>
 				{ this.props.authedUser === null 
 					? <Login />
-					: <NewQuestionCard />
+					: <LeaderBoard />
 				}
 				
 				</div>
