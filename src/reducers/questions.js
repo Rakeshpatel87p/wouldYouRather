@@ -12,7 +12,7 @@ export default function questions(state = {}, action) {
 			const { authedUser, qid, answer } = action
 			const newAnswer = {qid: answer}
 			const { questions } = state
-
+			console.log(state)
 			return {
 				...state,
 				[qid] : {
@@ -23,29 +23,22 @@ export default function questions(state = {}, action) {
 					}
 					
 				},
-				/* Not working- cannot read property answers of undefined
+				 //Not working- cannot read property answers of undefined
 				[authedUser] : {
 					...state[authedUser],
 					answers: {...state[authedUser].answers, qid: answer }
 
 				}
-				
-				[authedUser] : {
-					...state[authedUser],
-					answers: {
-						...state[authedUser].answers, [qid] : answer 
-					}
-				}
-				*/
 			}
 		
 		case  SAVE_NEW_QUESTION : {
 			const { optionOneText, optionTwoText, author, id } = action
+			console.log(state);
 			//Not working - cannot read property questions of undefined 
 			return {
 				...state,
 				[author] : {
-					...state[authedUser],
+					...state[author],
 					questions: state[authedUser].questions.concat([id])
 				}
 			}

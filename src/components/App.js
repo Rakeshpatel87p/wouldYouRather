@@ -18,7 +18,7 @@ class App extends Component {
 				<div>
 				{ this.props.authedUser === null 
 					? <Login />
-					: <NewQuestionCard />
+					: <AnswerPoll id="loxhs1bqm25b708cmbf3g" />
 				}
 				
 				</div>
