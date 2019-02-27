@@ -25,18 +25,13 @@ export default function questions(state = {}, action) {
 			}
 		
 		case  SAVE_NEW_QUESTION : {
-			const { optionOneText, optionTwoText, author, id } = action
-			console.log(state);
-			//Not working - cannot read property questions of undefined 
-			/*
+			const { newQuestionInfo } = action
+			
 			return {
 				...state,
-				[author] : {
-					...state[author],
-					questions: state[authedUser].questions.concat([id])
-				}
+				[newQuestionInfo.id]: newQuestionInfo
 			}
-			*/
+			
 		}
 		
 			

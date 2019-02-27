@@ -34,7 +34,6 @@ class AnswerPoll extends Component {
 }
 
 function mapStateToProps({authedUser, questions}, {id}) {
-	//const { id } = props.match.params
 
 	return {
 		authedUser: authedUser,
