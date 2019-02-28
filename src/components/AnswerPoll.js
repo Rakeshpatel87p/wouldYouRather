@@ -41,5 +41,5 @@ function mapStateToProps({authedUser, questions}, {id}) {
 	}
 	
 }
-
+//Adding a new comment here to test out whether this is working
 export default connect(mapStateToProps)(AnswerPoll)
