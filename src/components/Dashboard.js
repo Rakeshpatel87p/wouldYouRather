@@ -9,14 +9,16 @@ class Dashboard extends Component {
 		return (
 			<div>
 				<h3>Your Timeline</h3>
+				
 				<h4>Answered Questions</h4>
 				<ul className="answeredQuestions">
-				{ answered.map((keyname) => (
-					<li key={keyname}>
-						<QuestionCard id={keyname} />
-					</li>
-				))}
+					{ answered.map((keyname) => (
+						<li key={keyname}>
+							<QuestionCard id={keyname} />
+						</li>
+					))}
 				</ul>
+				
 				<h4>Unanswered Questions</h4>
 				<ul className="questionsUnanswered">
 					{ unanswered.map((keyname) => (
