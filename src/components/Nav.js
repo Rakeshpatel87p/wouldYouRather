@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser'
@@ -32,14 +32,17 @@ class Nav extends Component {
 		            Leader Board
 		         </NavLink>
 		        </li>
-		      	<li>
-		          Hello {authedUser}
-		        </li>
-		       	<li>
-		          <NavLink to='/' exact onClick={this.logout}>
-		            Logout
-		         </NavLink>
-		        </li>
+		        { authedUser === null
+		        	? <Fragment></Fragment>
+		        	: <Fragment>
+		        		<li> Hello {authedUser}</li>	
+			       		<li>
+			          		<NavLink to='/' exact onClick={this.logout}>
+			            		Logout
+			         		</NavLink>
+			        	</li>
+			       	  </Fragment>
+		        }
 		      </ul>
 		    </nav>
 		)
