@@ -32,9 +32,8 @@ class Nav extends Component {
 		            Leader Board
 		         </NavLink>
 		        </li>
-		        { authedUser === null
-		        	? <Fragment></Fragment>
-		        	: <Fragment>
+		        { authedUser && 
+		        	<Fragment>
 		        		<li> Hello {authedUser}</li>	
 			       		<li>
 			          		<NavLink to='/' exact onClick={this.logout}>
