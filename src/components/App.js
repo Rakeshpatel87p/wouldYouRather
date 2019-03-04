@@ -9,6 +9,7 @@ import AnswerPoll from './AnswerPoll'
 import QuestionCard from './QuestionCard'
 import NewQuestionCard from './NewQuestionCard'
 import LeaderBoard from './LeaderBoard'
+import Nav from './Nav'
 
 class App extends Component {
 	componentDidMount() {
@@ -16,13 +17,20 @@ class App extends Component {
 	}
 	render() {
 		return (
+			<Router>
 				<div>
+					<Nav />
 				{ this.props.authedUser === null 
 					? <Login />
-					: <LeaderBoard />
+					: <div>
+						<Route path='/' exact component={Dashboard} />
+						<Route path='/newQuestion' exact component={NewQuestionCard} />
+						<Route path='/leaderBoard' exact component={LeaderBoard} />
+					  </div>
 				}
 				
 				</div>
+			</Router>
 		);
 	}
 }
