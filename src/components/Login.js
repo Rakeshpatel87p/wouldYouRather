@@ -16,6 +16,7 @@ class Login extends Component {
 			<div>
 				<h1>Select From User List Below</h1>
 				<select onChange={this.setAuthedUser}>
+					<option disabled selected value> -- select an option -- </option>
 					{this.props.users.map((user) => (
 						<option key={user} value={user}>{user}</option>
 					))}
