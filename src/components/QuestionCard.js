@@ -12,7 +12,6 @@ class QuestionCard extends Component {
 }
 
 function mapStateToProps({questions}, {id}) {
-
 	return {
 		question: questions[id],
 	}

@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import '../App.css';
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
+import Nav from './Nav'
 import Login from './Login'
 import Dashboard from './Dashboard'
 import AnswerPoll from './AnswerPoll'
 import QuestionCard from './QuestionCard'
 import NewQuestionCard from './NewQuestionCard'
 import LeaderBoard from './LeaderBoard'
-import Nav from './Nav'
+import QuestionStatistics from './QuestionStatistics'
 
 class App extends Component {
 	componentDidMount() {
@@ -24,8 +25,9 @@ class App extends Component {
 					? <Login />
 					: <div>
 						<Route path='/' exact component={Dashboard} />
-						<Route path='/newQuestion' exact component={NewQuestionCard} />
-						<Route path='/leaderBoard' exact component={LeaderBoard} />
+						<Route path='/newQuestion' component={NewQuestionCard} />
+						<Route path='/leaderBoard' component={LeaderBoard} />
+						<Route path='/questionStatistics/:qid' component={QuestionStatistics} />
 					  </div>
 				}
 				
