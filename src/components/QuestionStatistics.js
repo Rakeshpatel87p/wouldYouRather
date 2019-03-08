@@ -32,7 +32,7 @@ class QuestionStatistics extends Component {
 function mapStateToProps({questions, users, authedUser}, props) {
 	//const qid = props.match.params - not working, unable iterate over obj
 	//const qid ='am8ehyc8byjqgar0jgpub9'
-	const { qid } = props.match.param
+	const { qid } = props.match.params
 	console.log(qid)
 	const authToQuery = questions[qid].author
 
