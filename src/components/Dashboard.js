@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import QuestionCard from './QuestionCard'
+import { Link, withRouter } from 'react-router-dom'
 
 class Dashboard extends Component {
 	render() {
@@ -13,18 +14,22 @@ class Dashboard extends Component {
 				<h4>Answered Questions</h4>
 				<ul className="answeredQuestions">
 					{ answered.map((keyname) => (
-						<li key={keyname}>
-							<QuestionCard id={keyname} />
-						</li>
+						<Link key={keyname} to={`/questionStatistics/${keyname}`} className='tweet'>
+							<li key={keyname}>
+								<QuestionCard id={keyname} />
+							</li>
+						</Link>
 					))}
 				</ul>
 				
 				<h4>Unanswered Questions</h4>
 				<ul className="questionsUnanswered">
 					{ unanswered.map((keyname) => (
-						<li key={keyname}>
-							<QuestionCard id={keyname} />
-						</li>
+						<Link key={keyname} to={`/questionStatistics/${keyname}`} className='tweet'>
+							<li key={keyname}>
+								<QuestionCard id={keyname} />
+							</li>
+						</Link>
 					))}
 				</ul>
 			</div>
@@ -57,4 +62,4 @@ function mapStateToProps({authedUser, users, questions}) {
 	}
 }
 
-export default connect(mapStateToProps)(Dashboard)
+export default withRouter(connect(mapStateToProps)(Dashboard))
