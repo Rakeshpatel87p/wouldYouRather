@@ -16,10 +16,17 @@ html {
 }
 
 .nav-list {
+  border: 2px solid purple; border-radius: 50px;
+  box-shadow: 0px 2px 6px grey;
   display: flex; justify-content: space-between;
   list-style: none;
   margin-bottom: 45px; padding: 0;
+  padding: 20px;
 
+}
+
+.nav-list li {
+  color: purple;
 }
 
 .nav-loggedUser {
@@ -29,12 +36,11 @@ html {
 
 .nav-logout {
   font-size: 10px;
-  margin-left: -75px;
+  margin-left: -120px;
   margin-top: 12px;
 }
 
 .nav-list a {
-  color: purple;
   text-decoration: none;
 
 }
