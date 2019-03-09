@@ -36,7 +36,7 @@ class AnswerPoll extends Component {
 						type="radio" 
 						name="userResponse" 
 						value="optionOne"
-						checked={this.state.selectedOption === 'optionOne'}
+						checked={this.state.selectedOption == 'optionOne'}
 						onChange={this.handleOptionChange}
 					/>
 					<label for="optionOne">{question.optionOne.text}</label>
@@ -45,7 +45,7 @@ class AnswerPoll extends Component {
 						type="radio" 
 						name="userResponse" 
 						value="optionTwo"
-						checked={this.state.selectedOption === 'optionTwo'}
+						checked={this.state.selectedOption == 'optionTwo'}
 						onChange={this.handleOptionChange}
 					/>
 					<label for="optionTwo">{question.optionTwo.text}</label>
