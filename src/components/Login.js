@@ -13,14 +13,17 @@ class Login extends Component {
 
 	render() {
 		return (
-			<div>
-				<h1>Select From User List Below</h1>
-				<select onChange={this.setAuthedUser} defaultValue='unselected'>
-					<option disabled value="unselected"> -- select an option -- </option>
-					{this.props.users.map((user) => (
-						<option key={user} value={user}>{user}</option>
-					))}
-          		</select>
+			<div class="login-wrapper">
+				<h1>Would You Rather?</h1>
+				<div class="login-border">
+					<h3>Select Login</h3>
+					<select onChange={this.setAuthedUser} defaultValue='unselected'>
+						<option disabled value="unselected"> -- select an option -- </option>
+						{this.props.users.map((user) => (
+							<option key={user} value={user}>{user}</option>
+						))}
+	          		</select>
+          		</div>
 			</div>
 		)
 	}
