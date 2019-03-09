@@ -3,11 +3,24 @@ import { connect } from 'react-redux'
 import { handleSaveAnswer } from '../actions/questions'
 
 class AnswerPoll extends Component {
-
+	constructor(props) {
+		super(props)
+		this.state = {
+			selectedOption: 'optionOne' 
+		}
+	}
 	submitAnswer = (e, id) => {
 		e.preventDefault()
+		//const userResponse = this.state.selectedOption
+		const userResponse = 'optionOne'
 		const optionTwo = 'optionTwo'
 		this.props.dispatch(handleSaveAnswer(id, optionTwo))
+	}
+
+	handleOptionChange = (event) => {
+		this.setState({
+			selectedOption: event.target.value
+		})
 	}
 
 	render() {
@@ -20,9 +33,23 @@ class AnswerPoll extends Component {
 				<p>{question.author}</p>
 				
 				<form>
-					<input id="optionOne" type="radio" name="userResponse" value="optionOne" />
+					<input 
+						id="optionOne" 
+						type="radio" 
+						name="userResponse" 
+						value="optionOne"
+						checked={this.state.selectedOption === 'optionOne'}
+						onChange={this.handleOptionChange}
+					/>
 					<label for="optionOne">{question.optionOne.text}</label>
-					<input id="optionTwo" type="radio" name="userResponse" value="optionTwo" />
+					<input 
+						id="optionTwo" 
+						type="radio" 
+						name="userResponse" 
+						value="optionTwo"
+						checked={this.state.selectedOption === 'optionTwo'}
+						onChange={this.handleOptionChange}
+					/>
 					<label for="optionTwo">{question.optionTwo.text}</label>
 				</form>
 				<button onClick={(e) => this.submitAnswer(e, id)}>
@@ -33,11 +60,12 @@ class AnswerPoll extends Component {
 	}
 }
 
-function mapStateToProps({authedUser, questions}, {id}) {
-
+function mapStateToProps({authedUser, questions}, props) {
+	const { qid } = props.match.params
+	
 	return {
 		authedUser: authedUser,
-		question: questions[id],
+		question: questions[qid],
 	}
 	
 }

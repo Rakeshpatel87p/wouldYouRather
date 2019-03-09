@@ -25,7 +25,7 @@ class Dashboard extends Component {
 				<h4>Unanswered Questions</h4>
 				<ul className="questionsUnanswered">
 					{ unanswered.map((keyname) => (
-						<Link key={keyname} to={`/questionStatistics/${keyname}`} className='tweet'>
+						<Link key={keyname} to={`/answerPoll/${keyname}`} className='tweet'>
 							<li key={keyname}>
 								<QuestionCard id={keyname} />
 							</li>

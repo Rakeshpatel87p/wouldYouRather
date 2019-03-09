@@ -9,9 +9,6 @@ class QuestionStatistics extends Component {
 		const { authedUser } = this.props.authedUser
 		const totalVotes = optionOne.votes.length + optionTwo.votes.length
 
-		console.log(this.props.questionData)
-		console.log(this.props.userData)
-
 		return (
 			<div>
 				<p>Asked by {name}</p>
@@ -33,7 +30,6 @@ function mapStateToProps({questions, users, authedUser}, props) {
 	//const qid = props.match.params - not working, unable iterate over obj
 	//const qid ='am8ehyc8byjqgar0jgpub9'
 	const { qid } = props.match.params
-	console.log(qid)
 	const authToQuery = questions[qid].author
 
 	return {
