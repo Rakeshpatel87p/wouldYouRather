@@ -4,20 +4,32 @@ html {
   background: #add8e6;
   font-family: 'Montserrat', sans-serif;
   padding: 25px;
-}
-/* Login component */
-.login-wrapper {
-    margin: auto;
-    text-align: center;
-    width: 50%;
+  text-align: center;
 }
 
-.login-border {
-  border: 3px solid white;
-  border-radius: 10px;
-  padding: 25px; padding-bottom: 47px;
+/*------------------------------------------------*/
+
+/* Utilities */
+.border-wrapper {
+  border: 2px solid purple; border-radius: 50px;
+  box-shadow: 0px 2px 6px grey;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  max-width: 500px;
 }
 
+/*------------------------------------------------*/
+
+/* Buttons */
+
+.btn {
+  margin-top: 25px;
+}
+
+/*------------------------------------------------*/
+
+/* Nav-List styles */
 .nav-list {
   border: 2px solid purple; border-radius: 50px;
   box-shadow: 0px 2px 6px grey;
@@ -49,3 +61,20 @@ html {
   text-decoration: none;
 
 }
+
+/*------------------------------------------------*/
+
+/* Login component */
+.login-wrapper {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+}
+
+.login-border {
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 25px; padding-bottom: 47px;
+}
+
+/*------------------------------------------------*/

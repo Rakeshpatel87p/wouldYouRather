@@ -29,22 +29,25 @@ class NewQuestionCard extends Component {
 	render() {
 		return (
 			<div>
-				<h3>Create New Question</h3>
-				<h4>Would you rather...</h4>
-				<form onSubmit={this.handleSubmit}>
-         			<input type="text" 
-         				onChange={(e) => {
-         					this.handleChange(e, 'optionOneText')
-         				}}
-         			/>
-         			<p>Or</p>
-         			<input type="text" 
-	         			onChange={(e) => {
-	         				this.handleChange(e, 'optionTwoText')
-	         			}}
-         			/>
-        			<input type="submit" value="Submit" />
-      			</form>
+				<h1>Create New Question</h1>
+				<div class="border-wrapper">
+					<h4>Would you rather...</h4>
+					<form onSubmit={this.handleSubmit}>
+	         			<input type="text" 
+	         				onChange={(e) => {
+	         					this.handleChange(e, 'optionOneText')
+	         				}}
+	         			/>
+	         			<p>Or</p>
+	         			<input type="text" 
+		         			onChange={(e) => {
+		         				this.handleChange(e, 'optionTwoText')
+		         			}}
+	         			/>
+	         			<br />
+	        			<input class="btn" type="submit" value="Submit" />
+	      			</form>
+      			</div>
 			</div>
 		)
 	}
