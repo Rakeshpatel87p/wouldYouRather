@@ -11,10 +11,8 @@ class AnswerPoll extends Component {
 	}
 	submitAnswer = (e, id) => {
 		e.preventDefault()
-		//const userResponse = this.state.selectedOption
-		const userResponse = 'optionOne'
-		const optionTwo = 'optionTwo'
-		this.props.dispatch(handleSaveAnswer(id, optionTwo))
+		const userResponse = this.state.selectedOption
+		this.props.dispatch(handleSaveAnswer(id, userResponse))
 	}
 
 	handleOptionChange = (event) => {
