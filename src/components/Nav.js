@@ -34,8 +34,8 @@ class Nav extends Component {
 		        </li>
 		        { authedUser && 
 		        	<Fragment>
-		        		<li> Hello {authedUser}</li>	
-			       		<li>
+		        		<li class="nav-loggedUser"> Hello {authedUser}</li>	
+			       		<li class="nav-logout">
 			          		<NavLink to='/' exact onClick={this.logout}>
 			            		Logout
 			         		</NavLink>

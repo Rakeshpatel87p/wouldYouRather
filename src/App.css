@@ -14,3 +14,27 @@ html {
   border-radius: 10px;
   padding: 25px; padding-bottom: 47px;
 }
+
+.nav-list {
+  display: flex; justify-content: space-between;
+  list-style: none;
+  margin-bottom: 45px; padding: 0;
+
+}
+
+.nav-loggedUser {
+  border-bottom: 3px solid white;
+  padding-bottom: 3px;
+}
+
+.nav-logout {
+  font-size: 10px;
+  margin-left: -75px;
+  margin-top: 12px;
+}
+
+.nav-list a {
+  color: purple;
+  text-decoration: none;
+
+}
