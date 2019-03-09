@@ -2,11 +2,14 @@
 
 html {
   background: #add8e6;
+  font-family: 'Montserrat', sans-serif;
   padding: 25px;
 }
 /* Login component */
 .login-wrapper {
+    margin: auto;
     text-align: center;
+    width: 50%;
 }
 
 .login-border {
@@ -20,7 +23,8 @@ html {
   box-shadow: 0px 2px 6px grey;
   display: flex; justify-content: space-between;
   list-style: none;
-  margin-bottom: 45px; padding: 0;
+  margin: 0px auto 45px; padding: 0;
+  max-width: 950px;
   padding: 20px;
 
 }
@@ -41,6 +45,7 @@ html {
 }
 
 .nav-list a {
+  padding-bottom: 10px;
   text-decoration: none;
 
 }
