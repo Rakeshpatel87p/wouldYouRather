@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { handleNewQuestion } from '../actions/questions'
 import { connect } from 'react-redux'
+import { NavLink, withRouter } from 'react-router-dom'
 
 class NewQuestionCard extends Component {
 	constructor(props) {
@@ -24,6 +25,7 @@ class NewQuestionCard extends Component {
     	const { optionOneText, optionTwoText } = this.state
     	const { authedUser } = this.props
     	this.props.dispatch(handleNewQuestion(optionOneText, optionTwoText, authedUser))
+    	this.props.history.push('/leaderBoard');
   	}
 	
 	render() {
@@ -45,7 +47,7 @@ class NewQuestionCard extends Component {
 		         			}}
 	         			/>
 	         			<br />
-	        			<input class="btn" type="submit" value="Submit" />
+	        				<input class="btn" type="submit" value="Submit" />
 	      			</form>
       			</div>
 			</div>
